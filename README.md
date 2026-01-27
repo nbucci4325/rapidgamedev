@@ -2,9 +2,7 @@
 
 # Game Overview
 - Engine: Unity
-- Console: PC
-- ArtStyle: TBD
-- Age Rating: TBD
+- Platform: PC
 
 
 # Game Concept 
@@ -40,7 +38,6 @@ _Development Team - (Editable)_
 3. Matteo Buccilli   - 3D Artist, Level Designer
 4. Taylor Vanderloos - Character Artist, Level Designer
 5. Cloey Olsen       - Audio Composer + SFX Designer
-6. Josh Rose         - Programmer (of some kind TBD)
 7. Kiyaan Merali     - 3D Lead Artist, Environment Artist & Technical Artist
 8. Adrian Cheng      - Gameplay Programming, Narrative
 9. Logan Howlett     - 3D Artist, Level Designer
