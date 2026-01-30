@@ -11,13 +11,12 @@ _Add Game High Concept / Tagline Here_
 *';' separates keyboard from Gamepad controls
 
 # Player Control(s)   | Include(s) Combat Mechanics
-Actions               | Keyboard Control   
+Actions               | Keyboard | Gamepad
 ---                   |---                
 Walking               | "WASD"; "LJoystick"
 Camera                | "Mouse"; "RJoystick"
 Jump                  | "SPACE"; "A"
-Dash                  | "Q"; "B"
-Sprint                | "SHIFT"; "LSB" 
+Dash                  | "SHIFT"; "B"
 Attack                | "Left Click"; "RT" 
 Deflect/Parry         | "Right Click"; "LT"
 Cycle Weapon          | "1, 2, 3/Scroll Wheel"; "LB/RB"
@@ -26,7 +25,7 @@ Cycle Weapon          | "1, 2, 3/Scroll Wheel"; "LB/RB"
 # UI/MENU Control(s)
 Actions               | Keyboard Control   
 ---                   |---                
-Interact              | "E"; "X" 
+Interact              | "E"; "A" 
 Pause/Menu Interact   | "ESC"; "Options"
 Navigate UI           | "Arroy Keys"; "D-Pad/LJoystick" 
 
