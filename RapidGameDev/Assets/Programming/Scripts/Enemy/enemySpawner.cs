@@ -6,8 +6,8 @@ public class enemySpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> enemyPrefabs;
     [SerializeField] List<Material> enemyMaterials;
-    public float spawnInterval = 2.0f;
-    public bool isSpawning = true;
+    [SerializeField] public float spawnInterval = 2.0f;
+    private bool isSpawning = true;
     [SerializeField] float spawnerSize = 5.0f;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] int maxAttempts = 20;
