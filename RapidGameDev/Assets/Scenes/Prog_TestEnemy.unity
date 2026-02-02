@@ -167,8 +167,17 @@ MonoBehaviour:
   - {fileID: 7423082225242274265, guid: 501700db8f84b5c478413065ed9f2a05, type: 3}
   - {fileID: 7423082225242274265, guid: 2e5083de99921e54d8a3b035ba49b104, type: 3}
   - {fileID: 7423082225242274265, guid: 6719dbf677dd4df4f94efa615cdc0b6b, type: 3}
-  spawnInterval: 2
+  enemyMaterials:
+  - {fileID: 2100000, guid: df7564b0336cccf4893e59507eef75c4, type: 2}
+  - {fileID: 2100000, guid: a546fcc7aa2e5894cbd1f3862c3be070, type: 2}
+  - {fileID: 2100000, guid: 956e3e91e30bba24c8cd7dd9bee7cc40, type: 2}
+  spawnInterval: 0.2
   isSpawning: 1
+  spawnerSize: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  maxAttempts: 50
 --- !u!1 &299702162
 GameObject:
   m_ObjectHideFlags: 0
