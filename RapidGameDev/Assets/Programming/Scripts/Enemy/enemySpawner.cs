@@ -22,18 +22,20 @@ public class enemySpawner : MonoBehaviour
         while (isSpawning)
         {
             yield return new WaitForSeconds(spawnInterval);
-            Vector3 spawnPosition = getValidSpawnPosition();
-            GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], spawnPosition, transform.rotation);
+            int rand = Random.Range(0, enemyPrefabs.Count);
+            Vector3 spawnPosition = getValidSpawnPosition(rand);
+            GameObject enemy = Instantiate(enemyPrefabs[rand], spawnPosition, transform.rotation);
             assignRandomMaterial(enemy);
         }
     }
 
-    private Vector3 getValidSpawnPosition()
+    private Vector3 getValidSpawnPosition(int rand)
     {
         for (int i = 0; i < maxAttempts; i++)
         {
             Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnerSize;
             spawnPosition.y = transform.position.y;
+            if (rand == 0) spawnPosition.y += 10.0f;
             bool overlaps = Physics.CheckSphere(spawnPosition, enemyPrefabs[0].GetComponent<CapsuleCollider>().radius, enemyLayer);
             if (!overlaps)
             {
