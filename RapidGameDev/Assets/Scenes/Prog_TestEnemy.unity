@@ -172,7 +172,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a546fcc7aa2e5894cbd1f3862c3be070, type: 2}
   - {fileID: 2100000, guid: 956e3e91e30bba24c8cd7dd9bee7cc40, type: 2}
   spawnInterval: 0.2
-  isSpawning: 1
   spawnerSize: 5
   enemyLayer:
     serializedVersion: 2
@@ -270,7 +269,7 @@ Transform:
   m_GameObject: {fileID: 299702162}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.003510736, y: 3.008368, z: -0.006080784}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
