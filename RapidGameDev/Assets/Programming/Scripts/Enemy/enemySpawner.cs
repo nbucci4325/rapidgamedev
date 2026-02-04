@@ -11,6 +11,7 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] float spawnerSize = 5.0f;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] int maxAttempts = 20;
+    [SerializeField] int maxEnemies = 25;
 
     private void Start()
     {
@@ -19,13 +20,14 @@ public class enemySpawner : MonoBehaviour
 
     IEnumerator spawnEnemyRoutine()
     {
-        while (isSpawning)
+        while (isSpawning && maxEnemies > 0)
         {
             yield return new WaitForSeconds(spawnInterval);
             int rand = Random.Range(0, enemyPrefabs.Count);
             Vector3 spawnPosition = getValidSpawnPosition(rand);
             GameObject enemy = Instantiate(enemyPrefabs[rand], spawnPosition, transform.rotation);
             assignRandomMaterial(enemy);
+            maxEnemies--;
         }
     }
 
