@@ -48,6 +48,15 @@ public class _gameManager : MonoBehaviour
         StartCoroutine(loadLevel(levelNames[0]));
     }
 
+    public void levelComplete()
+    {
+        currentLevelIndex++;
+        if (currentLevelIndex < levelNames.Length)
+        {
+            StartCoroutine(loadLevel(levelNames[currentLevelIndex]));
+        }
+    }
+
     IEnumerator loadLevel(string LevelName)
     {
         isLoadingScene = true;
@@ -56,9 +65,12 @@ public class _gameManager : MonoBehaviour
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
             while (!asyncUnload.isDone)
                 yield return null;
+
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LevelName));
+            currentLevelName = LevelName;
         }
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
             yield return null;
         isLoadingScene = false;
