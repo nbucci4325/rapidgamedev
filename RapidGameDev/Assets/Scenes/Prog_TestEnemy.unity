@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 179393328}
   - component: {fileID: 179393329}
+  - component: {fileID: 179393330}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -177,6 +178,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   maxAttempts: 50
+--- !u!114 &179393330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179393327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ae134b5bd057f4fb8c78751e381445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
 --- !u!1 &299702162
 GameObject:
   m_ObjectHideFlags: 0
