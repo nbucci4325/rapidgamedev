@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5672304902543190764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5216364732339441733}
+  - component: {fileID: 2872148814048476796}
+  - component: {fileID: 7018204675808111206}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5216364732339441733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672304902543190764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2872148814048476796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672304902543190764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450db6e1c0bf4554883110a0cd710b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 7423082225242274265, guid: 501700db8f84b5c478413065ed9f2a05, type: 3}
+  - {fileID: 7423082225242274265, guid: 2e5083de99921e54d8a3b035ba49b104, type: 3}
+  - {fileID: 7423082225242274265, guid: 6719dbf677dd4df4f94efa615cdc0b6b, type: 3}
+  enemyMaterials:
+  - {fileID: 2100000, guid: df7564b0336cccf4893e59507eef75c4, type: 2}
+  - {fileID: 2100000, guid: a546fcc7aa2e5894cbd1f3862c3be070, type: 2}
+  - {fileID: 2100000, guid: 956e3e91e30bba24c8cd7dd9bee7cc40, type: 2}
+  spawnInterval: 0.2
+  spawnerSize: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  maxAttempts: 50
+  maxEnemies: 25
+--- !u!114 &7018204675808111206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5672304902543190764}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ae134b5bd057f4fb8c78751e381445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
