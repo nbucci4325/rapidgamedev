@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.UI;
 using UnityEngine;
 
 public abstract class baseEnemy : MonoBehaviour
@@ -18,7 +19,12 @@ public abstract class baseEnemy : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         swordController temp = other.GetComponent<swordController>();
-        if (temp)
+        string playerTag;
+        string currentTag = gameObject.tag;
+        if (temp) //&& playerTag == currentTag)
+        {
+
+        }
         {
             takeDamage(temp.damage);
         }
