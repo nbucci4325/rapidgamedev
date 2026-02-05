@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2196733182305626897}
+  - component: {fileID: 3281803819223975889}
   - component: {fileID: 202642075048740437}
   - component: {fileID: 4592922590063675719}
   - component: {fileID: 1747881393947730734}
   m_Layer: 6
   m_Name: RangedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,6 +38,18 @@ Transform:
   - {fileID: 8500688152945247481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3281803819223975889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423082225242274265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5442bd5cc80c88a4eb04a6af5492f7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &202642075048740437
 MeshFilter:
   m_ObjectHideFlags: 0

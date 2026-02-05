@@ -1,16 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class bomberEnemy : MonoBehaviour
+public class bomberEnemy : baseEnemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public abstract void getCurrentColour()
+    //{
+    //    return null;
+    //}
 }

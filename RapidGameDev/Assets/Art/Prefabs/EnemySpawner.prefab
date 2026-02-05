@@ -53,13 +53,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: df7564b0336cccf4893e59507eef75c4, type: 2}
   - {fileID: 2100000, guid: a546fcc7aa2e5894cbd1f3862c3be070, type: 2}
   - {fileID: 2100000, guid: 956e3e91e30bba24c8cd7dd9bee7cc40, type: 2}
-  spawnInterval: 0.2
+  spawnInterval: 1
   spawnerSize: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
   maxAttempts: 50
   maxEnemies: 25
+  ObjectPool: {fileID: 7018204675808111206}
 --- !u!114 &7018204675808111206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,9 +68,10 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5672304902543190764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18ae134b5bd057f4fb8c78751e381445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
+  pool: []

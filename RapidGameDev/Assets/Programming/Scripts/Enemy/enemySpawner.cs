@@ -12,6 +12,7 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] int maxAttempts = 20;
     [SerializeField] int maxEnemies = 25;
+    [SerializeField] objectPool ObjectPool;
 
     private void Start()
     {
@@ -25,7 +26,10 @@ public class enemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
             int rand = Random.Range(0, enemyPrefabs.Count);
             Vector3 spawnPosition = getValidSpawnPosition(rand);
-            GameObject enemy = Instantiate(enemyPrefabs[rand], spawnPosition, transform.rotation);
+            ObjectPool.prefab = enemyPrefabs[rand];
+            GameObject enemy = ObjectPool.getObject();
+            enemy.transform.position = spawnPosition;
+            enemy.transform.rotation = transform.rotation;
             assignRandomMaterial(enemy);
             maxEnemies--;
         }

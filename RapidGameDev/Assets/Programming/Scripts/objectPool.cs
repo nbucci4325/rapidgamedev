@@ -5,22 +5,25 @@ using UnityEngine;
 public class objectPool : MonoBehaviour
 {
     public GameObject prefab;
-    private Queue<GameObject> pool = new Queue<GameObject> ();
+    [SerializeField] List<GameObject> pool = new List<GameObject>();
 
     public GameObject getObject()
     {
-        if (pool.Count > 0)
+        foreach (GameObject g in pool)
         {
-            GameObject obj = pool.Dequeue ();
-            obj.SetActive (true);
-            return obj;
+            if (!g.activeInHierarchy)
+            {
+                g.SetActive(true);
+                return g;
+            }
         }
-        return Instantiate(prefab);
+        GameObject ins = Instantiate(prefab, this.transform);
+        pool.Add(ins);
+        return ins;
     }
 
     public void returnObject(GameObject obj)
     {
         obj.SetActive(false);
-        pool.Enqueue (obj);
     }
 }

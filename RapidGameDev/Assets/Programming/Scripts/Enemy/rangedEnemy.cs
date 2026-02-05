@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class rangedEnemy : MonoBehaviour
+public class rangedEnemy : baseEnemy
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int currentColor;
+    public GameObject enemyRef;
 
-    // Update is called once per frame
-    void Update()
+    public void GetCurrentColour()
     {
-        
+        string matName = GetComponent<Renderer>().material.name.ToLower();
+
+        if (matName.Contains("cyan")) currentColor = 0;
+        else if (matName.Contains("yellow")) currentColor = 1;
+        else if (matName.Contains("magenta")) currentColor = 2;
+        else
+        {
+            currentColor = -1;
+            Debug.LogWarning("Unknown material: " + matName);
+        }
     }
 }

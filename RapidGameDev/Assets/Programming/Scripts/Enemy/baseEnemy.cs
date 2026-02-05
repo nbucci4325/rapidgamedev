@@ -4,8 +4,6 @@ using UnityEngine;
 public abstract class baseEnemy : MonoBehaviour
 {
     private float health = 100.0f;
-    [HideInInspector]
-    private bool isAlive = true;
 
     public void takeDamage(float amount)
     {
@@ -13,9 +11,19 @@ public abstract class baseEnemy : MonoBehaviour
         if (health <= 0.0f)
         {
             Debug.Log("Enemy Destroyed");
-            isAlive = false;
+            gameObject.SetActive(false);
         }
     }
 
-    public abstract void attack();
+    public void OnTriggerEnter(Collider other)
+    {
+        swordController temp = other.GetComponent<swordController>();
+        if (temp)
+        {
+            takeDamage(temp.damage);
+        }
+    }
+
+    //public abstract void attack();
+    //public abstract void getCurrentColour();
 }
