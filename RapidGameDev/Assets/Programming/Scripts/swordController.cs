@@ -8,7 +8,7 @@ public class swordController : MonoBehaviour
     public float attackCooldown = 0.6f;
     public bool isAttacking = false;
     public int colourIndex = 2;
-    
+    public float damage = 100.0f;
 
     // Update is called once per frame
     void Update()
