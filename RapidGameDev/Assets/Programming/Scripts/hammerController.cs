@@ -7,7 +7,8 @@ public class hammerController : MonoBehaviour
     public bool canAttack = true;
     public float attackCooldown = 1.2f;
     public bool isAttacking = false;
-    public int colourIndex = 2;
+    public int colourIndex = 1;
+    public float damage = 100.0f;
 
     // Update is called once per frame
     void Update()

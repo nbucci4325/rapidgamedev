@@ -1,29 +1,29 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
-public class swordController : MonoBehaviour
+public class wbxBowController : MonoBehaviour
 {
-    public GameObject sword;
+    public GameObject bow;
     public bool canAttack = true;
-    public float attackCooldown = 0.6f;
+    public float attackCooldown = 0.9f;
     public bool isAttacking = false;
-    public int colourIndex = 2;
-    
+    public int colourIndex = 0;
+    public float damage = 100.0f;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canAttack)
         {
-            SwordAttack();
+            BowAttack();
         }
     }
 
-    public void SwordAttack()
+    public void BowAttack()
     {
         isAttacking = true;
         canAttack = false;
-        Animator anim = sword.GetComponent<Animator>();
+        Animator anim = bow.GetComponent<Animator>();
         anim.SetTrigger("Attack");
         StartCoroutine(ResetAttackCooldown());
     }
@@ -37,7 +37,7 @@ public class swordController : MonoBehaviour
 
     IEnumerator ResetAttackBool()
     {
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.9f);
         isAttacking = false;
     }
 }
