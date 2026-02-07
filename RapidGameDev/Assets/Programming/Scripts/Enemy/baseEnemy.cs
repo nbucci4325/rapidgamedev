@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.UI;
 using UnityEngine;
 
 public abstract class baseEnemy : MonoBehaviour
@@ -21,24 +20,55 @@ public abstract class baseEnemy : MonoBehaviour
         colourName = colour;
     }
 
-
     public void OnTriggerEnter(Collider other)
     {
-        swordController sword = other.GetComponentInParent<swordController>();
-        if (sword == null)
-            return;
+        Debug.Log("Trigger fired! Collided with: " + other.name);
 
-        string swordTag = sword.gameObject.tag;
+        Transform weaponsParent = other.transform.root.Find("WeaponHolder");
+        if (weaponsParent == null)
+        {
+            Debug.Log("WeaponsHolder not found!");
+            return;
+        }
+
+        swordController sword = weaponsParent.GetComponentInChildren<swordController>(true);
+        hammerController hammer = weaponsParent.GetComponentInChildren<hammerController>(true);
+        wbxBowController bow = weaponsParent.GetComponentInChildren<wbxBowController>(true);
+
+        MonoBehaviour activeWeapon = null;
+
+        if (sword != null && sword.gameObject.activeInHierarchy)
+            activeWeapon = sword;
+        else if (hammer != null && hammer.gameObject.activeInHierarchy)
+            activeWeapon = hammer;
+        else if (bow != null && bow.gameObject.activeInHierarchy)
+            activeWeapon = bow;
+
+        if (activeWeapon == null)
+        {
+            Debug.Log("No active weapon detected!");
+            return;
+        }
+
+        Debug.Log("Active weapon detected: " + activeWeapon.name);
+
+        string weaponTag = activeWeapon.gameObject.tag;
         Transform tagChild = transform.GetChild(0);
         string enemyTag = tagChild.tag;
 
         Debug.Log("Enemy tag: " + enemyTag);
-        Debug.Log("Sword tag: " + swordTag);
+        Debug.Log("Weapon tag: " + weaponTag);
 
-        if (swordTag == enemyTag)
+        if (weaponTag == enemyTag)
         {
             Debug.Log("HIT!");
-            takeDamage(sword.damage);
+
+            float weaponDamage = 0f;
+            if (activeWeapon is swordController s) weaponDamage = s.damage;
+            else if (activeWeapon is hammerController h) weaponDamage = h.damage;
+            else if (activeWeapon is wbxBowController b) weaponDamage = b.damage;
+
+            takeDamage(weaponDamage);
         }
     }
 }
