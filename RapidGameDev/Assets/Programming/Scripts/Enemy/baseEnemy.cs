@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class baseEnemy : MonoBehaviour
 {
     private float health = 100.0f;
+    private string colourName;
 
     public void takeDamage(float amount)
     {
@@ -15,21 +16,33 @@ public abstract class baseEnemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    public void SetColour(string colour)
+    {
+        colourName = colour;
+    }
+
 
     public void OnTriggerEnter(Collider other)
     {
-        swordController temp = other.GetComponent<swordController>();
-        string playerTag;
-        string currentTag = gameObject.tag;
-        if (temp) //&& playerTag == currentTag)
-        {
+        swordController sword = other.GetComponentInParent<swordController>();
+        if (sword == null)
+            return;
 
-        }
+        string swordTag = sword.gameObject.tag;
+        Transform tagChild = transform.GetChild(0);
+        string enemyTag = tagChild.tag;
+
+        Debug.Log("Enemy tag: " + enemyTag);
+        Debug.Log("Sword tag: " + swordTag);
+
+        if (swordTag == enemyTag)
         {
-            takeDamage(temp.damage);
+            Debug.Log("HIT!");
+            takeDamage(sword.damage);
         }
     }
-
-    //public abstract void attack();
-    //public abstract void getCurrentColour();
 }
+
+//public abstract void attack();
+//public abstract void getCurrentColour();
+

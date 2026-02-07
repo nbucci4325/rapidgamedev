@@ -56,9 +56,20 @@ public class enemySpawner : MonoBehaviour
     {
         Renderer rend = enemy.GetComponentInChildren<Renderer>();
         Material randomMat = enemyMaterials[Random.Range(0, enemyMaterials.Count)];
+
         if (rend != null)
-        {
             rend.material = randomMat;
-        }
+
+        // Get the child that should receive the tag
+        Transform tagChild = enemy.transform.GetChild(0);
+
+        string matName = randomMat.name.ToLower();
+
+        if (matName.Contains("cyan"))
+            tagChild.gameObject.tag = "Cyan";
+        else if (matName.Contains("yellow"))
+            tagChild.gameObject.tag = "Yellow";
+        else if (matName.Contains("magenta"))
+            tagChild.gameObject.tag = "Magenta";
     }
 }
