@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class baseEnemy : MonoBehaviour
@@ -6,6 +5,11 @@ public abstract class baseEnemy : MonoBehaviour
     private float health = 100.0f;
     private string colourName;
 
+    #region Setters
+    /// <summary>
+    /// Subtracts incoming attack damage from current health
+    /// </summary>
+    /// <param name="amount">The amount to be subtracted</param>
     public void takeDamage(float amount)
     {
         health -= amount;
@@ -15,11 +19,22 @@ public abstract class baseEnemy : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    /// <summary>
+    /// Sets the colour of the enemy as a string
+    /// </summary>
+    /// <param name="colour">The colour, as a string, to be set</param>
     public void SetColour(string colour)
     {
         colourName = colour;
     }
+    #endregion
 
+    #region Collision Logic
+    /// <summary>
+    /// Describes how to be behave based on incoming attack, taking into account colour
+    /// </summary>
+    /// <param name="other">The attacking collider</param>
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log("Trigger fired! Collided with: " + other.name);
@@ -71,6 +86,7 @@ public abstract class baseEnemy : MonoBehaviour
             takeDamage(weaponDamage);
         }
     }
+    #endregion
 }
 
 //public abstract void attack();

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +7,9 @@ public class _gameManager : MonoBehaviour
     #region Singleton
     public static _gameManager instance;
 
+    /// <summary>
+    /// Defines the construction of the singleton
+    /// </summary>
     public static _gameManager Instance
     {
         get
@@ -22,6 +24,10 @@ public class _gameManager : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// Defines the behaviour of the singleton on start
+    /// </summary>
     private void Awake()
     {
         if (!instance)
@@ -38,16 +44,23 @@ public class _gameManager : MonoBehaviour
     #endregion
 
     #region Scene Management
+    [Tooltip("Input level names here (MUST be exactly as written in the scene file) that are to be loaded")]
     [SerializeField] private string[] levelNames;
     private bool isLoadingScene = false;
     private string currentLevelName = "";
     private int currentLevelIndex = 0;
 
+    /// <summary>
+    /// Defines the start behaviour of the game
+    /// </summary>
     private void Start()
     {
         StartCoroutine(loadLevel(levelNames[0]));
     }
 
+    /// <summary>
+    /// Defines what is to be done upon level completion
+    /// </summary>
     public void levelComplete()
     {
         currentLevelIndex++;
@@ -57,6 +70,11 @@ public class _gameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine describe actions to be taken in order to load a new level into the game
+    /// </summary>
+    /// <param name="LevelName">The level name, as a string, to be loaded</param>
+    /// <returns>IEnumerator interface as per coroutine convention</returns>
     IEnumerator loadLevel(string LevelName)
     {
         isLoadingScene = true;

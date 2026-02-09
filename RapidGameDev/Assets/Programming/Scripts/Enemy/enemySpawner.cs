@@ -60,7 +60,6 @@ public class enemySpawner : MonoBehaviour
         if (rend != null)
             rend.material = randomMat;
 
-        // Get the child that should receive the tag
         Transform tagChild = enemy.transform.GetChild(0);
 
         string matName = randomMat.name.ToLower();
