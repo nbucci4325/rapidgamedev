@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3885865308842652933}
   - component: {fileID: 6076312838697651842}
   - component: {fileID: 1865917041256985549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31c0060a7575bd1489e3febfd5700e4a, type: 2}
   - {fileID: 2100000, guid: 2ea4aa77d269f0648a9e86887f39d801, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -122,7 +121,7 @@ GameObject:
   - component: {fileID: 5460399887386176439}
   - component: {fileID: 541033713400375751}
   - component: {fileID: -2347843816040522169}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +175,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31c0060a7575bd1489e3febfd5700e4a, type: 2}
   - {fileID: 2100000, guid: 61e1ca39fe99c5443be51ae6d9eee3b4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
