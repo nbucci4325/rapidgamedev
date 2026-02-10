@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Outlined Obj
+  - Outlined Objects
   - Water
   - UI
   - Enemy
