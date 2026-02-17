@@ -33,11 +33,11 @@ public class parry : MonoBehaviour
     {
         parryCollider.SetActive(false);
         parryOn = false;
-        canParry = true;
     }
 
     IEnumerator ParryCooldown()
     {
         yield return new WaitForSeconds(cooldown);
+        canParry = true;
     }
 }
