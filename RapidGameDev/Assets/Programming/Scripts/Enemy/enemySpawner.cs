@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,12 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] List<Material> enemyMaterials;
     [SerializeField] public float spawnInterval = 2.0f;
     private bool isSpawning = true;
-    [SerializeField] float spawnerSize = 5.0f;
+    public float spawnerSize = 5.0f;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] int maxAttempts = 20;
     [SerializeField] int maxEnemies = 25;
     [SerializeField] objectPool ObjectPool;
+    public Color color = Color.red;
 
     private void Start()
     {

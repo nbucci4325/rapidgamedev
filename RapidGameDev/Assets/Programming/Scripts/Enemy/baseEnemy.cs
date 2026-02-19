@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class baseEnemy : MonoBehaviour
 {
@@ -27,6 +29,40 @@ public abstract class baseEnemy : MonoBehaviour
     public void SetColour(string colour)
     {
         colourName = colour;
+    }
+    #endregion
+
+    #region States
+    public enum State
+    {
+        Patrol,
+        Chase,
+        Wait,
+        Attack,
+    }
+
+    public State currentState = State.Patrol;
+    public Transform player;
+    public float moveSpeed;
+    public NavMeshAgent agent;
+    public float chaseDistance = 10f;
+    public float patrolRadius = 20f;
+    public int currentPatrolIndex = 0;
+    public float waitTime = 2f;
+    public float waitTimer;
+    public bool isWaiting;
+
+    public abstract State Patrol();
+    public abstract State Chase();
+    public abstract State Wait();
+    public abstract State Attack();
+    protected void moveToRandomPoint()
+    {
+        Vector3 randomDir = Random.insideUnitSphere * patrolRadius;
+        randomDir += agent.transform.position;
+
+        if (NavMesh.SamplePosition(randomDir, out NavMeshHit hit, patrolRadius, 1))
+            agent.SetDestination(hit.position);
     }
     #endregion
 
@@ -87,8 +123,81 @@ public abstract class baseEnemy : MonoBehaviour
         }
     }
     #endregion
+
+    #region FOV
+    public float radius;
+    [Range(0, 360)]
+    public float angle;
+    public GameObject playerRef;
+    public LayerMask targetMask;
+    public LayerMask obstructionMask;
+    public bool canSeePlayer;
+
+    private IEnumerator FOVRoutine()
+    {
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
+        while (true) 
+        {
+            yield return wait;
+            FieldOfViewCheck();
+        }
+    }
+
+    private void FieldOfViewCheck()
+    {
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+
+        if (rangeChecks.Length != 0)
+        {
+            Transform target = rangeChecks[0].transform;
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    canSeePlayer = true;
+                else
+                    canSeePlayer = false;
+            }
+            else
+                canSeePlayer = false;
+        }
+        else if (canSeePlayer)
+            canSeePlayer = false;
+    }
+    #endregion
+
+    #region Runtime
+    protected virtual void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        playerRef = GameObject.Find("Player");
+        StartCoroutine(FOVRoutine());
+    }
+
+    protected virtual void Update()
+    {
+        State nextState = currentState;
+
+        switch (currentState)
+        {
+            case State.Patrol:
+                nextState = Patrol();
+                break;
+            case State.Chase:
+                nextState = Chase();
+                break;
+            case State.Wait:
+                nextState = Wait();
+                break;
+            case State.Attack:
+                nextState = Attack();
+                break;
+        }
+
+        if (nextState != currentState) currentState = nextState;
+    }
+    #endregion
 }
-
-//public abstract void attack();
-//public abstract void getCurrentColour();
-
