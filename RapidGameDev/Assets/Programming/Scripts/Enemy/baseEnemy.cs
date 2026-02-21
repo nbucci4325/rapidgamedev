@@ -47,10 +47,12 @@ public abstract class baseEnemy : MonoBehaviour
     public NavMeshAgent agent;
     public float chaseDistance = 10f;
     public float patrolRadius = 20f;
+    public float attackDistance = 5f;
     public int currentPatrolIndex = 0;
     public float waitTime = 2f;
     public float waitTimer;
     public bool isWaiting;
+    public bool isAttacking = false;
 
     public abstract State Patrol();
     public abstract State Chase();
@@ -133,7 +135,7 @@ public abstract class baseEnemy : MonoBehaviour
     public LayerMask obstructionMask;
     public bool canSeePlayer;
 
-    private IEnumerator FOVRoutine()
+    public IEnumerator FOVRoutine()
     {
         WaitForSeconds wait = new WaitForSeconds(0.2f);
         while (true) 
@@ -143,7 +145,7 @@ public abstract class baseEnemy : MonoBehaviour
         }
     }
 
-    private void FieldOfViewCheck()
+    public void FieldOfViewCheck()
     {
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
 
@@ -174,7 +176,6 @@ public abstract class baseEnemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         playerRef = GameObject.Find("Player");
-        StartCoroutine(FOVRoutine());
     }
 
     protected virtual void Update()
@@ -196,7 +197,6 @@ public abstract class baseEnemy : MonoBehaviour
                 nextState = Attack();
                 break;
         }
-
         if (nextState != currentState) currentState = nextState;
     }
     #endregion

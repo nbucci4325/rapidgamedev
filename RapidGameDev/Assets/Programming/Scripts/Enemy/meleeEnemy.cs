@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem.Android;
 
 public class meleeEnemy : baseEnemy
 {
@@ -16,6 +14,7 @@ public class meleeEnemy : baseEnemy
 
     public override State Patrol()
     {
+        StartCoroutine(FOVRoutine());
         agent.autoBraking = false;
         isWaiting = false;
         waitTime = 0;
@@ -28,9 +27,14 @@ public class meleeEnemy : baseEnemy
             if (waitTimer >= waitTime)
             {
                 waitTimer = 0;
-                isWaiting= false;
+                isWaiting = false;
                 moveToRandomPoint();
             }
+        }
+        if (canSeePlayer)
+        {
+            //StopCoroutine(FOVRoutine());
+            return State.Chase;
         }
         return State.Patrol;
     }
@@ -39,18 +43,30 @@ public class meleeEnemy : baseEnemy
     {
         agent.ResetPath();
         agent.autoBraking = true;
-        throw new System.NotImplementedException();
+        agent.SetDestination(player.position);
+        if (Vector3.Distance(transform.position, player.position) <= chaseDistance) return State.Attack; //change back to WAIT later
+        if (Vector3.Distance(transform.position, player.position) > chaseDistance) return State.Patrol;
+        return State.Chase;
     }
 
     public override State Wait()
     {
         throw new System.NotImplementedException();
+        //enemy manager stufff
     }
 
     public override State Attack()
     {
-        throw new System.NotImplementedException();
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (distanceToPlayer < attackDistance)
+        {
+            isAttacking = true;
+            Debug.Log(transform.name + "ATTACK!");
+        }
+
+        if (distanceToPlayer > attackDistance && distanceToPlayer <= chaseDistance) return State.Chase;
+        return State.Attack;
     }
 
-    private
+
 }
