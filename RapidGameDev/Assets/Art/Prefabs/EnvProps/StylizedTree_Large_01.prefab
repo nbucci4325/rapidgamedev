@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: -7112456663344739147, guid: 35d55d866c6119042aeb596433c37770, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 1688448624469586755, guid: 35d55d866c6119042aeb596433c37770, type: 3}
+      objectReference: {fileID: 2100000, guid: 6cee465de2335384f9070c898cc649bd, type: 2}
     - target: {fileID: 919132149155446097, guid: 35d55d866c6119042aeb596433c37770, type: 3}
       propertyPath: m_Name
       value: StylizedTree_Large
