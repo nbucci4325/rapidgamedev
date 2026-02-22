@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 202642075048740437}
   - component: {fileID: 4592922590063675719}
   - component: {fileID: 1747881393947730734}
+  - component: {fileID: 3956460769724139760}
   m_Layer: 6
   m_Name: BomberEnemy
   m_TagString: Enemy
@@ -188,6 +189,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6134012bc635aa4f8a633d1f52f90c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  player: {fileID: 5191839433246663338, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+  moveSpeed: 0
+  agent: {fileID: 0}
+  chaseDistance: 10
+  patrolRadius: 20
+  attackDistance: 5
+  currentPatrolIndex: 0
+  waitTime: 2
+  waitTimer: 0
+  isWaiting: 0
+  isAttacking: 0
+  radius: 0
+  angle: 0
+  playerRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  canSeePlayer: 0
 --- !u!33 &202642075048740437
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -264,3 +287,25 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &3956460769724139760
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423082225242274265}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 10
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
