@@ -51,22 +51,22 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -5680551816867524391, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
+      objectReference: {fileID: 2100000, guid: a53b8cd4ab56815478799708557726a2, type: 2}
     - target: {fileID: -7511558181221131132, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1e2731855cabded47985202679a28e54, type: 2}
+      objectReference: {fileID: -1896316500368573362, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
     - target: {fileID: -7511558181221131132, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
-      objectReference: {fileID: -1896316500368573362, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
+      objectReference: {fileID: -5680551816867524391, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
     - target: {fileID: -7511558181221131132, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
       propertyPath: 'm_Materials.Array.data[3]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1e2731855cabded47985202679a28e54, type: 2}
+      objectReference: {fileID: 2100000, guid: a53b8cd4ab56815478799708557726a2, type: 2}
     - target: {fileID: 919132149155446097, guid: 0a3bad418bc43b942a8b357c9684a5cf, type: 3}
       propertyPath: m_Name
-      value: Cave_CrystalCluster_02
+      value: Cave_CrystalCluster_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
