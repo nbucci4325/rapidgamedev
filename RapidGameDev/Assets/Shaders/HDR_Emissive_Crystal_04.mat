@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FresnelOutline_ShaderSineTime1
+  m_Name: HDR_Emissive_Crystal_04
   m_Shader: {fileID: -6465566751694194690, guid: 4db17e88c1b20c04584b566cf85da10d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,13 +38,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 2.97
+    - _FresnelPower: -0.65
     - _NoisePower: 18.97
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Base_Color: {r: 0.2004214, g: 0, b: 2, a: 0}
-    - _Fresnel_Color: {r: 10.478432, g: 6.333788, b: 16, a: 0}
+    - _Base_Color: {r: 1.056606, g: 2.6701574, b: 0, a: 0}
+    - _Fresnel_Color: {r: 114.075745, g: 33.586502, b: 21.501188, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6232148959814860445
