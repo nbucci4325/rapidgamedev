@@ -59,7 +59,7 @@ PrefabInstance:
     - target: {fileID: -7112456663344739147, guid: 35d55d866c6119042aeb596433c37770, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9b05e3d3c175f8b43962f6dea21322d7, type: 2}
+      objectReference: {fileID: 2100000, guid: 4c83d8bec35f7564f82670d8417a249e, type: 2}
     - target: {fileID: 919132149155446097, guid: 35d55d866c6119042aeb596433c37770, type: 3}
       propertyPath: m_Name
       value: StylizedTree_Large_02
@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 5624155697769452174, guid: 35d55d866c6119042aeb596433c37770, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 8669084397928874385, guid: 35d55d866c6119042aeb596433c37770, type: 3}
+      objectReference: {fileID: 2100000, guid: 57febed4f1c91b249996656fcefab0f1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

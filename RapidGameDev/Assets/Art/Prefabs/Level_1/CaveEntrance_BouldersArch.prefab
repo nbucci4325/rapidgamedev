@@ -48,10 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6366592117544206838, guid: 039337441045b9c4a9cdb4ca8ea84103, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c37a7d2632eb5240a1722ac062085c1, type: 2}
+    - target: {fileID: -3843075712591825724, guid: 039337441045b9c4a9cdb4ca8ea84103, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 34ef02ba1cd5f71469f4fe2d7056746b, type: 2}
     - target: {fileID: 919132149155446097, guid: 039337441045b9c4a9cdb4ca8ea84103, type: 3}
       propertyPath: m_Name
       value: CaveEntrance_BouldersArch
       objectReference: {fileID: 0}
+    - target: {fileID: 5373583871325558609, guid: 039337441045b9c4a9cdb4ca8ea84103, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a81e10d42969fe348afe54cdef8b4a25, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
