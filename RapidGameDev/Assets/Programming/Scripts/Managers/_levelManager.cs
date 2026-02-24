@@ -14,6 +14,9 @@ public class _levelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //reference mark video which explains declaring the player in the GameManager then referencing it here
+        if (other.gameObject == _gameManager.Instance.PlayerGameObject)
+        {
+            _gameManager.Instance.levelComplete();
+        }
     }
 }

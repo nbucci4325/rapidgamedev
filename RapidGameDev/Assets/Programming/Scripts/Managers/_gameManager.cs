@@ -24,7 +24,6 @@ public class _gameManager : MonoBehaviour
         }
     }
 
-
     /// <summary>
     /// Defines the behaviour of the singleton on start
     /// </summary>
@@ -43,6 +42,11 @@ public class _gameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] GameObject playerGameObject;
+    public GameObject PlayerGameObject => playerGameObject;
+    private playerMove playerMove;
+    public playerMove PlayerMove => playerMove;
+
     #region Scene Management
     [Tooltip("Input level names here (MUST be exactly as written in the scene file) that are to be loaded")]
     [SerializeField] private string[] levelNames;
@@ -55,6 +59,7 @@ public class _gameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        playerMove = playerGameObject.GetComponent<playerMove>();
         StartCoroutine(loadLevel(levelNames[0]));
     }
 
@@ -78,6 +83,7 @@ public class _gameManager : MonoBehaviour
     IEnumerator loadLevel(string LevelName)
     {
         isLoadingScene = true;
+        playerGameObject.SetActive(false);
         if (!string.IsNullOrEmpty(currentLevelName))
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
@@ -91,6 +97,7 @@ public class _gameManager : MonoBehaviour
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
             yield return null;
+        playerGameObject.SetActive(true);
         isLoadingScene = false;
     }
     #endregion
