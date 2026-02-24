@@ -42,7 +42,7 @@ public class enemySpawner : MonoBehaviour
         {
             Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnerSize;
             spawnPosition.y = transform.position.y;
-            if (rand == 0) spawnPosition.y += 10.0f;
+            if (enemyPrefabs[rand].name == "enemyBomber") spawnPosition.y += 10.0f;
             bool overlaps = Physics.CheckSphere(spawnPosition, enemyPrefabs[0].GetComponent<CapsuleCollider>().radius, enemyLayer);
             if (!overlaps)
             {
