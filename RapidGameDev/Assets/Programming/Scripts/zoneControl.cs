@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem.Controls;
 
 public class zoneControl : MonoBehaviour
 {
@@ -14,8 +13,11 @@ public class zoneControl : MonoBehaviour
 
     private void Update()
     {
-        //if enemy dies, call decrementZoneQuota() and check if zoneQuota is 0 or less, if so call zoneComplete()
-        if (zoneQuota <= 0) zoneComplete();
+        if (zoneQuota <= 0)
+        {
+            Debug.Log("ZONE COMPLETE");
+            zoneComplete();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +41,9 @@ public class zoneControl : MonoBehaviour
         }
     }
 
-    private void decrementZoneQuota()
+    public void decrementZoneQuota()
     {
         zoneQuota--;
+        Debug.Log("QUOTA DECREMENTED");
     }
 }

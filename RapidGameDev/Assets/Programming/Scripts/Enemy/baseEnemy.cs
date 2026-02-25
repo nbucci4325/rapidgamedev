@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -68,6 +69,8 @@ public abstract class baseEnemy : MonoBehaviour
     #endregion
 
     #region Collision Logic
+    zoneControl zoneControl;
+
     /// <summary>
     /// Describes how to be behave based on incoming attack, taking into account colour
     /// </summary>
@@ -121,6 +124,8 @@ public abstract class baseEnemy : MonoBehaviour
             else if (activeWeapon is wbxBowController b) weaponDamage = b.damage;
 
             takeDamage(weaponDamage);
+            zoneControl.decrementZoneQuota();
+
         }
     }
     #endregion
@@ -189,6 +194,7 @@ public abstract class baseEnemy : MonoBehaviour
     #region Runtime
     protected virtual void Start()
     {
+        zoneControl = FindFirstObjectByType<zoneControl>();
         agent = GetComponent<NavMeshAgent>();
         playerRef = GameObject.Find("Player");
         player = GameObject.FindGameObjectWithTag("Player").transform;
