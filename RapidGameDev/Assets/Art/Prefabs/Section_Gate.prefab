@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoneQuota: 0
   spawners: []
+  firstZoneInLevel: 0
 --- !u!65 &9098554324432018592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,5 +102,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6140614, y: 0.17777216, z: 2.1655788}
-  m_Center: {x: -1.1852827, y: -0.008252323, z: 0.5827894}
+  m_Size: {x: 2.4768105, y: 0.17777216, z: 1.863802}
+  m_Center: {x: 0.07217598, y: -0.008252323, z: -0.7434206}
