@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8729246160917802477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3929106241369814977}
+  - component: {fileID: 8394318567640947428}
+  - component: {fileID: 8808385008086531495}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3929106241369814977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729246160917802477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.000000046889, y: -0, z: -0.59}
+  m_LocalScale: {x: 1.7867, y: 5.5895076, z: 1.7867}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1895647822525130208}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &8394318567640947428
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729246160917802477}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &8808385008086531495
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8729246160917802477}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5768007
+  m_Height: 2.0340974
+  m_Direction: 1
+  m_Center: {x: 0.000000066720375, y: 0.011265268, z: -0.07680075}
 --- !u!1001 &2144849062823133707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,6 +174,14 @@ PrefabInstance:
       objectReference: {fileID: -876546973899608171, guid: f1932ad882c1cd74ba191cf42df4d6a7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1932ad882c1cd74ba191cf42df4d6a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3929106241369814977}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1932ad882c1cd74ba191cf42df4d6a7, type: 3}
+--- !u!4 &1895647822525130208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1932ad882c1cd74ba191cf42df4d6a7, type: 3}
+  m_PrefabInstance: {fileID: 2144849062823133707}
+  m_PrefabAsset: {fileID: 0}

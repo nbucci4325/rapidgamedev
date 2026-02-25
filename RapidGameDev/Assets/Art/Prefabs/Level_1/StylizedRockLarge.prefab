@@ -107,6 +107,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f94678169263348bc17448c0c86823, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4317820333343099882}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b1f94678169263348bc17448c0c86823, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4628615809570051571}
   m_SourcePrefab: {fileID: 100100000, guid: b1f94678169263348bc17448c0c86823, type: 3}
 --- !u!1 &1982618451579671743 stripped
 GameObject:
@@ -149,6 +152,28 @@ LODGroup:
     - renderer: {fileID: 6572155583212779871}
     - renderer: {fileID: 6800143947951639750}
   m_Enabled: 1
+--- !u!64 &4628615809570051571
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982618451579671743}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!23 &5409746939610067100 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -2571118854743697038, guid: b1f94678169263348bc17448c0c86823, type: 3}
