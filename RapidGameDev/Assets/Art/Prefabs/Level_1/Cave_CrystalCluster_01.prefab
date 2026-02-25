@@ -67,7 +67,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
       insertIndex: -1
       addedObject: {fileID: 488243931852503390}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4046214497459488020}
   m_SourcePrefab: {fileID: 100100000, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
+--- !u!23 &7412373407070725237 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
+  m_PrefabInstance: {fileID: 8151409731850877169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9069957348707992992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
@@ -95,3 +103,30 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3123724904385632794, guid: c94007be89e6f504ba228c9bde38cf05, type: 3}
+--- !u!205 &4046214497459488020
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069957348707992992}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.4019274
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7412373407070725237}
+  - screenRelativeHeight: 0.054850984
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7412373407070725237}
+  - screenRelativeHeight: 0.007426666
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7412373407070725237}
+  m_Enabled: 1
