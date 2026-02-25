@@ -4,6 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class _gameManager : MonoBehaviour
 {
+    [SerializeField] GameObject playerGameObject;
+    public GameObject PlayerGameObject => playerGameObject;
+    private playerMove playerMove;
+    public playerMove PlayerMove => playerMove;
+
     #region Singleton
     public static _gameManager instance;
 
@@ -41,11 +46,6 @@ public class _gameManager : MonoBehaviour
         }
     }
     #endregion
-
-    [SerializeField] GameObject playerGameObject;
-    public GameObject PlayerGameObject => playerGameObject;
-    private playerMove playerMove;
-    public playerMove PlayerMove => playerMove;
 
     #region Scene Management
     [Tooltip("Input level names here (MUST be exactly as written in the scene file) that are to be loaded")]

@@ -1,5 +1,3 @@
-using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class bomberEnemy : baseEnemy
@@ -15,7 +13,7 @@ public class bomberEnemy : baseEnemy
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update()
+    private new void Update()
     {
         base.Update();
     }

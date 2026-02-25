@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class meleeEnemy : baseEnemy
 {
-    private void Start()
+    private new void Start()
     {
         base.Start();
     }
 
-    private void Update()
+    private new void Update()
     {
         base.Update();
     }
