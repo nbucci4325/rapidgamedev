@@ -31,6 +31,7 @@ public class bomberEnemy : baseEnemy
     public override State Chase()
     {
         Vector3 dir = (player.position - transform.position).normalized;
+        dir.y = 0;
         transform.position += dir * moveSpeed * Time.deltaTime;
         if (Vector3.Distance(transform.position, player.position) <= chaseDistance) return State.Attack; //change back to WAIT later
         if (Vector3.Distance(transform.position, player.position) > chaseDistance) return State.Patrol;
