@@ -64,16 +64,10 @@ MonoBehaviour:
   waitTimer: 0
   isWaiting: 0
   isAttacking: 0
-  radius: 0
-  angle: 0
   playerRef: {fileID: 0}
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 256
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 0
-  canSeePlayer: 0
+    m_Bits: 2560
 --- !u!33 &202642075048740437
 MeshFilter:
   m_ObjectHideFlags: 0

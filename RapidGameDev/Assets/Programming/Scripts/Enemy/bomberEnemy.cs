@@ -1,10 +1,18 @@
+using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class bomberEnemy : baseEnemy
 {
-    private void Start()
+    [SerializeField] GameObject[] waypoints;
+    private int currentPatrolIndex = 0;
+    private projectile projectile;
+
+    private new void Start()
     {
-        base.Start();
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        playerRef = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
@@ -14,36 +22,18 @@ public class bomberEnemy : baseEnemy
 
     public override State Patrol()
     {
-        StartCoroutine(FOVRoutine());
-        agent.autoBraking = false;
-        isWaiting = false;
-        waitTime = 0;
-        moveToRandomPoint();
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
-            isWaiting = true;
-        if (isWaiting)
-        {
-            waitTimer += Time.deltaTime;
-            if (waitTimer >= waitTime)
-            {
-                waitTimer = 0;
-                isWaiting = false;
-                moveToRandomPoint();
-            }
-        }
-        if (canSeePlayer)
-        {
-            StopCoroutine(FOVRoutine());
-            return State.Chase;
-        }
+        Transform target = waypoints[currentPatrolIndex].transform;
+        Vector3 dir = (target.position - transform.position).normalized;
+        transform.position += dir * moveSpeed * Time.deltaTime;
+        if (Vector3.Distance(transform.position, target.position) < 1f) currentPatrolIndex = Random.Range(0, waypoints.Length);
+        if (canSeePlayer()) return State.Chase;
         return State.Patrol;
     }
 
     public override State Chase()
     {
-        agent.ResetPath();
-        agent.autoBraking = true;
-        agent.SetDestination(player.position);
+        Vector3 dir = (player.position - transform.position).normalized;
+        transform.position += dir * moveSpeed * Time.deltaTime;
         if (Vector3.Distance(transform.position, player.position) <= chaseDistance) return State.Attack; //change back to WAIT later
         if (Vector3.Distance(transform.position, player.position) > chaseDistance) return State.Patrol;
         return State.Chase;
@@ -58,13 +48,13 @@ public class bomberEnemy : baseEnemy
     public override State Attack()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer < attackDistance)
+        if (distanceToPlayer <= attackDistance)
         {
-            isAttacking = true;
-            Debug.Log(transform.name + "ATTACK!");
+            Debug.Log("Attack!");
+            //projectile.shoot();
         }
-
         if (distanceToPlayer > attackDistance && distanceToPlayer <= chaseDistance) return State.Chase;
         return State.Attack;
     }
+
 }

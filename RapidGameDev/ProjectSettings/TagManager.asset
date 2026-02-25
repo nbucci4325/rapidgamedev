@@ -8,6 +8,7 @@ TagManager:
   - Cyan
   - Magenta
   - Yellow
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Target
   - FreeLine_Outline
   - 
-  - 
+  - Obstruction
   - 
   - 
   - 

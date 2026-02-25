@@ -48,7 +48,6 @@ public abstract class baseEnemy : MonoBehaviour
     public float chaseDistance = 10f;
     public float patrolRadius = 20f;
     public float attackDistance = 5f;
-    public int currentPatrolIndex = 0;
     public float waitTime = 2f;
     public float waitTimer;
     public bool isWaiting;
@@ -127,47 +126,63 @@ public abstract class baseEnemy : MonoBehaviour
     #endregion
 
     #region FOV
-    public float radius;
-    [Range(0, 360)]
-    public float angle;
+    //public float radius;
+    //[Range(0, 360)]
+    //public float angle;
     public GameObject playerRef;
-    public LayerMask targetMask;
+    //public LayerMask targetMask;
     public LayerMask obstructionMask;
-    public bool canSeePlayer;
+    //public bool canSeePlayer;
 
-    public IEnumerator FOVRoutine()
+    //public IEnumerator FOVRoutine()
+    //{
+    //    WaitForSeconds wait = new WaitForSeconds(0.2f);
+    //    while (true) 
+    //    {
+    //        yield return wait;
+    //        FieldOfViewCheck();
+    //    }
+    //}
+
+    //public void FieldOfViewCheck()
+    //{
+    //    Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+
+    //    if (rangeChecks.Length != 0)
+    //    {
+    //        Transform target = rangeChecks[0].transform;
+    //        Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+    //        if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+    //        {
+    //            float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+    //            if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+    //                canSeePlayer = true;
+    //            else
+    //                canSeePlayer = false;
+    //        }
+    //        else
+    //            canSeePlayer = false;
+    //    }
+    //    else if (canSeePlayer)
+    //        canSeePlayer = false;
+    //}
+
+    public bool canSeePlayer()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-        while (true) 
+        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, distanceToPlayer, obstructionMask))
         {
-            yield return wait;
-            FieldOfViewCheck();
+            Debug.DrawRay(transform.position, directionToPlayer * hit.distance, Color.blue);
+            return false;
         }
-    }
-
-    public void FieldOfViewCheck()
-    {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
-
-        if (rangeChecks.Length != 0)
+        else
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-            {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                    canSeePlayer = true;
-                else
-                    canSeePlayer = false;
-            }
-            else
-                canSeePlayer = false;
+            Debug.DrawRay(transform.position, directionToPlayer * distanceToPlayer, Color.green);
+            return true;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
     }
     #endregion
 
@@ -176,6 +191,7 @@ public abstract class baseEnemy : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         playerRef = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     protected virtual void Update()

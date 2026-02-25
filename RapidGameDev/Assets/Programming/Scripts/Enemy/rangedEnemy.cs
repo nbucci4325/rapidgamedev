@@ -14,7 +14,6 @@ public class rangedEnemy : baseEnemy
 
     public override State Patrol()
     {
-        StartCoroutine(FOVRoutine());
         agent.autoBraking = false;
         isWaiting = false;
         waitTime = 0;
@@ -31,11 +30,7 @@ public class rangedEnemy : baseEnemy
                 moveToRandomPoint();
             }
         }
-        if (canSeePlayer)
-        {
-            StopCoroutine(FOVRoutine());
-            return State.Chase;
-        }
+        if (canSeePlayer()) return State.Chase;
         return State.Patrol;
     }
 
@@ -58,7 +53,7 @@ public class rangedEnemy : baseEnemy
     public override State Attack()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        if (distanceToPlayer < attackDistance)
+        if (distanceToPlayer <= attackDistance)
         {
             isAttacking = true;
             Debug.Log(transform.name + "ATTACK!");
