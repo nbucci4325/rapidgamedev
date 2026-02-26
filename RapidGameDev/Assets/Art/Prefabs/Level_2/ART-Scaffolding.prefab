@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: b19f3e3e05abc4b479e072aa178fd7b3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -108,8 +112,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.4575863, y: 4.186621, z: 0.14976592}
-  m_Center: {x: 0, y: 1.6632773e-16, z: 0.07420426}
+  m_Size: {x: 6.7378225, y: 4.186621, z: 0.14976592}
+  m_Center: {x: 0.0026202202, y: 1.6632773e-16, z: 0.07420426}
 --- !u!136 &3157525333291652166
 CapsuleCollider:
   m_ObjectHideFlags: 0
