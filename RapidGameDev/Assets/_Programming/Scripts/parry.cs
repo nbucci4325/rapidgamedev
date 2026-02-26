@@ -11,7 +11,7 @@ public class parry : MonoBehaviour
     public float cooldown = 5.0f;
     public bool parryOn = false;
     public bool canParry = true;
-
+    public _weaponManager weaponManager;
     
 
     // Update is called once per frame
