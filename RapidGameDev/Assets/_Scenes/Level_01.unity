@@ -3762,6 +3762,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone2A
       objectReference: {fileID: 0}
+    - target: {fileID: 5066910251717809154, guid: c03be92401cf1ec42bf2ea16102254e7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.686493
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066910251717809154, guid: c03be92401cf1ec42bf2ea16102254e7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8458328
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066910251717809154, guid: c03be92401cf1ec42bf2ea16102254e7, type: 3}
+      propertyPath: m_Center.x
+      value: -0.05090332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5066910251717809154, guid: c03be92401cf1ec42bf2ea16102254e7, type: 3}
+      propertyPath: m_Center.y
+      value: -0.061634064
+      objectReference: {fileID: 0}
     - target: {fileID: 9098554324432018592, guid: c03be92401cf1ec42bf2ea16102254e7, type: 3}
       propertyPath: m_Size.x
       value: 2.2665863
