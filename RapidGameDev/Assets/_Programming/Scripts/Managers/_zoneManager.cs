@@ -13,10 +13,10 @@ public class zoneControl : MonoBehaviour
         zoneQuota = zoneQuotas[0];
     }
 
-    private void Update()
-    {
+    //private void Update()
+    //{
 
-    }
+    //}
 
     //    [SerializeField] private int zoneQuota = 0;
     //    [SerializeField] private GameObject[] spawners;
