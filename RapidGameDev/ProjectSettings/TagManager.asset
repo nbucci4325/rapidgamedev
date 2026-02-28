@@ -10,6 +10,7 @@ TagManager:
   - Yellow
   - Waypoint
   - Zone
+  - Start
   layers:
   - Default
   - TransparentFX

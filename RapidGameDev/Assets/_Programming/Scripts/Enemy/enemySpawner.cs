@@ -15,8 +15,9 @@ public class enemySpawner : MonoBehaviour
     [SerializeField] objectPool ObjectPool;
     public Color color = Color.red;
 
-    private void Start()
+    private void OnEnable()
     {
+        Debug.Log("SPAWNER ALIVE");
         StartCoroutine(spawnEnemyRoutine());
     }
 
@@ -32,6 +33,7 @@ public class enemySpawner : MonoBehaviour
             enemy.transform.position = spawnPosition;
             enemy.transform.rotation = transform.rotation;
             assignRandomMaterial(enemy);
+            Debug.Log("Enemy spawned");
             maxEnemies--;
         }
     }
