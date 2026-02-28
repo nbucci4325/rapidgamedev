@@ -1,65 +1,59 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class zoneControl : MonoBehaviour
+#region Struct
+[System.Serializable]
+public struct zone
 {
-    //[SerializeField] GameObject[] spawners;
-    //[SerializeField] int[] zoneQuotas;
-    //private int zoneQuota = 0;
+    [SerializeField] GameObject spawners;
+    [SerializeField] GameObject gates;
+    [SerializeField] GameObject navMesh;
 
-    //private void Start()
-    //{
-    //    foreach (GameObject spawner in spawners) spawner.SetActive(false);
-    //    zoneQuota = zoneQuotas[0];
-    //}
+    public void setActive(bool state)
+    {
+        if (spawners != null) spawners.SetActive(state);
+        if (gates != null) gates.SetActive(state);
+        if (navMesh != null) navMesh.SetActive(state);
+    }
+}
+#endregion
 
-    //private void Update()
-    //{
+public class _zoneManager : MonoBehaviour
+{
+    [Tooltip("Input the quotas per zone here, in ascending order.")]
+    [SerializeField] int[] quotas;
+    [Tooltip("Every index of this array represents one zone. In each zone, include the parent object of the respective indexes.")]
+    [SerializeField] zone[] zoneData;
+    private int currentZoneQuota;
 
-    //}
-
-    [SerializeField] private int zoneQuota = 0;
-    [SerializeField] private GameObject[] spawners;
-    [SerializeField] private bool firstZoneInLevel = false;
-
+    #region Instantiation and Signalling
     private void Start()
     {
-        if (!firstZoneInLevel) foreach (GameObject spawner in spawners) spawner.SetActive(false);
+        setActiveZone(0);
+        currentZoneQuota = 0;
     }
 
-    private void Update()
+    private void setActiveZone(int index)
     {
-        if (zoneQuota <= 0)
+        if (index < 0 || index >= zoneData.Length) return;
+        for (int i = 0; i < zoneData.Length; i++) zoneData[i].setActive(false);
+        zoneData[index].setActive(true);
+    }
+
+    public void decrementQuota() 
+    {
+        quotas[currentZoneQuota]--;
+        if (quotas[currentZoneQuota] <= 0) zoneComplete();
+    }
+
+    private void zoneComplete() 
+    {
+        currentZoneQuota++;
+        if (currentZoneQuota >= zoneData.Length)
         {
-            Debug.Log("ZONE COMPLETE");
-            zoneComplete();
+            Debug.Log("All zones complete");
+            return;
         }
+        setActiveZone(currentZoneQuota);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            gameObject.GetComponent<Collider>().enabled = false;
-            //play animation of door opening here
-            foreach (GameObject spawner in spawners)
-            {
-                spawner.SetActive(true);
-            }
-        }
-    }
-
-    private void zoneComplete()
-    {
-        foreach (GameObject spawner in spawners)
-        {
-            spawner.SetActive(false);
-        }
-    }
-
-    public void decrementZoneQuota()
-    {
-        zoneQuota--;
-        Debug.Log("QUOTA DECREMENTED");
-    }
+    #endregion
 }

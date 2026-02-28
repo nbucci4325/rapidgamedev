@@ -58,9 +58,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90b815052a20d6d41bbe55eaa2f1f6f7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -296949334396822924}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90b815052a20d6d41bbe55eaa2f1f6f7, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9098554324432018592}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90b815052a20d6d41bbe55eaa2f1f6f7, type: 3}
       insertIndex: -1
@@ -71,21 +68,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 90b815052a20d6d41bbe55eaa2f1f6f7, type: 3}
   m_PrefabInstance: {fileID: 28223430302899159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-296949334396822924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911183834115024518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f6b0e5e48758940b844d184a836a73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zoneQuota: 0
-  spawners: []
-  firstZoneInLevel: 0
 --- !u!65 &9098554324432018592
 BoxCollider:
   m_ObjectHideFlags: 0
