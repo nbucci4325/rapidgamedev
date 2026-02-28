@@ -60,6 +60,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cave_Minecart_OreFilled
       objectReference: {fileID: 0}
+    - target: {fileID: 3678583255316291301, guid: c675b6988d2413c47b5bdee9176c98e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7920883
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678583255316291301, guid: c675b6988d2413c47b5bdee9176c98e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.073
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678583255316291301, guid: c675b6988d2413c47b5bdee9176c98e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.309
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678583255316291301, guid: c675b6988d2413c47b5bdee9176c98e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.587
+      objectReference: {fileID: 0}
     - target: {fileID: 6683930066821038081, guid: c675b6988d2413c47b5bdee9176c98e3, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
