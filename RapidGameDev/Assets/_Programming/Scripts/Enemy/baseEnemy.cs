@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,9 +18,9 @@ public abstract class baseEnemy : MonoBehaviour
         health -= amount;
         if (health <= 0.0f)
         {
-            Debug.Log("Enemy Destroyed");
             gameObject.SetActive(false);
             zone.decrementQuota();
+            Debug.Log("Enemy Destroyed! Quota Decremented!");
         }
     }
 
@@ -155,6 +156,7 @@ public abstract class baseEnemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         playerRef = GameObject.Find("Player");
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        zone = GameObject.FindGameObjectWithTag("Zone").GetComponent<_zoneManager>();
     }
 
     protected virtual void Update()

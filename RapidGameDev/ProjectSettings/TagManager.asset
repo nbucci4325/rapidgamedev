@@ -9,6 +9,7 @@ TagManager:
   - Magenta
   - Yellow
   - Waypoint
+  - Zone
   layers:
   - Default
   - TransparentFX
