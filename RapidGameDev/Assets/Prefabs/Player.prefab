@@ -72,6 +72,37 @@ MonoBehaviour:
   parryActive: 0
   healDelay: 1
   hurtbox: {fileID: 6636598849348017306}
+--- !u!1 &961091733660537081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683242846068292162}
+  m_Layer: 0
+  m_Name: LookHere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1683242846068292162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961091733660537081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.39, y: 0, z: 2.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 686803280460760368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086455052988098974
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +466,7 @@ Transform:
   - {fileID: 2325623791838880507}
   - {fileID: 6083145927440540070}
   - {fileID: 3989051791221584611}
+  - {fileID: 1683242846068292162}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &3243811920842402859
@@ -504,6 +536,7 @@ MonoBehaviour:
   cooldown: 5
   parryOn: 0
   canParry: 1
+  weaponManager: {fileID: 0}
 --- !u!1 &9114812751124341737
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,11 +547,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7900200315501615502}
   - component: {fileID: 9158790556609905565}
-  - component: {fileID: 1624277822420469796}
+  - component: {fileID: 8487977235031351839}
   - component: {fileID: 8512046882263747512}
   - component: {fileID: 3045845924751692351}
   - component: {fileID: 5897770563082585628}
   - component: {fileID: 5884427983155295410}
+  - component: {fileID: 6485751779592804660}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -534,8 +568,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114812751124341737}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.13870119, y: 0.0000032646267, z: -0.00000045722692, w: 0.99033433}
-  m_LocalPosition: {x: 3.8113942, y: 4.225048, z: -15.860165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8113942, y: 3.7285771, z: -13.62875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -584,7 +618,7 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &1624277822420469796
+--- !u!114 &8487977235031351839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -603,19 +637,19 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  OrbitStyle: 1
+  OrbitStyle: 0
   Radius: 5
   Orbits:
     Top:
-      Radius: 3
-      Height: 6
+      Radius: 2
+      Height: 5
     Center:
-      Radius: 7
-      Height: 2
+      Radius: 4
+      Height: 2.25
     Bottom:
-      Radius: 5
-      Height: -1
-    SplineCurvature: 0.3
+      Radius: 2.5
+      Height: 0.1
+    SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
     Value: 0
@@ -711,7 +745,7 @@ MonoBehaviour:
   m_ControllerManager:
     Controllers:
     - Name: Look Orbit X
-      Owner: {fileID: 1624277822420469796}
+      Owner: {fileID: 8487977235031351839}
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
@@ -724,7 +758,7 @@ MonoBehaviour:
         AccelTime: 0.2
         DecelTime: 0.2
     - Name: Look Orbit Y
-      Owner: {fileID: 1624277822420469796}
+      Owner: {fileID: 8487977235031351839}
       Enabled: 1
       Input:
         InputAction: {fileID: -5630151704836100654, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
@@ -737,7 +771,7 @@ MonoBehaviour:
         AccelTime: 0.2
         DecelTime: 0.2
     - Name: Orbit Scale
-      Owner: {fileID: 1624277822420469796}
+      Owner: {fileID: 8487977235031351839}
       Enabled: 1
       Input:
         InputAction: {fileID: -423771258819551211, guid: 1d6e640e716dc4ff6989b73d02023f2b, type: 3}
@@ -770,6 +804,25 @@ MonoBehaviour:
   sensX: 0
   sensY: 0
   rotationSpeed: 7
+  lookHere: {fileID: 0}
+--- !u!114 &6485751779592804660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114812751124341737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2588cc5dedbb75e49a44aada63f7b939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AimCollisionFilter:
+    serializedVersion: 2
+    m_Bits: 1
+  IgnoreTag: 
+  AimDistance: 200
+  NoiseCancellation: 1
 --- !u!1001 &5572150051328180561
 PrefabInstance:
   m_ObjectHideFlags: 0
