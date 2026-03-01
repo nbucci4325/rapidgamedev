@@ -79,7 +79,7 @@ public abstract class baseEnemy : MonoBehaviour
     {
         Debug.Log("Trigger fired! Collided with: " + other.name);
 
-        Transform weaponsParent = other.transform.root.Find("WeaponHolder");
+        Transform weaponsParent = other.transform.root.Find("PlayerObj").Find("WeaponHolder");
         if (weaponsParent == null)
         {
             Debug.Log("WeaponsHolder not found!");
