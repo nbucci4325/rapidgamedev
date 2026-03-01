@@ -2866,6 +2866,7 @@ GameObject:
   - component: {fileID: 532635317}
   - component: {fileID: 532635316}
   - component: {fileID: 532635315}
+  - component: {fileID: 532635318}
   - component: {fileID: 532635314}
   m_Layer: 0
   m_Name: Main Camera
@@ -3016,6 +3017,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 8.634, y: 540.328, z: 0.01}
+--- !u!114 &532635318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532635313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f47580d3646b94c9ee750c6e98fca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 855769717}
+  player: {fileID: 855769716}
+  playerObj: {fileID: 855769715}
+  rb: {fileID: 855769714}
+  rotationSpeed: 7
 --- !u!1 &535431936
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5173,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+--- !u!54 &855769714 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3243811920842402859, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+  m_PrefabInstance: {fileID: 855769713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &855769715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1203705010189616782, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+  m_PrefabInstance: {fileID: 855769713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &855769716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 686803280460760368, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+  m_PrefabInstance: {fileID: 855769713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &855769717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4471622085477692811, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+  m_PrefabInstance: {fileID: 855769713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &880318746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 17596080637526038, guid: 5ac5d42bf5bbe9d489e859c1b68bf40a, type: 3}
