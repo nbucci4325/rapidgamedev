@@ -10,6 +10,8 @@ public class playerMove : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public float dashSpeed;
+    public bool dashing = false;
     bool readyToJump = true;
 
     [Header("Keybinds")]
@@ -51,6 +53,11 @@ public class playerMove : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+        if (dashing)
+        {
+            moveSpeed = dashSpeed;
+        }
     }
 
     private void FixedUpdate()

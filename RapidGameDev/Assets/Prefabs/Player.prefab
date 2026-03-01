@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 686803280460760368}
   - component: {fileID: 3243811920842402859}
   - component: {fileID: 2459877091513023007}
+  - component: {fileID: 8425410874370163879}
   - component: {fileID: 712938026291573816}
   m_Layer: 0
   m_Name: Player
@@ -576,12 +577,36 @@ MonoBehaviour:
   jumpForce: 25
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  dashSpeed: 20
+  dashing: 0
   jumpKey: 32
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 192
   orientation: {fileID: 4471622085477692811}
+--- !u!114 &8425410874370163879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441782629823388441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f64dc35f020cc745a0099790be53c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 4471622085477692811}
+  playerCam: {fileID: 2623914363943328605}
+  dashForce: 1000
+  dashDuration: 0.2
+  useCameraForward: 0
+  allowAllDirections: 1
+  disableGravity: 1
+  resetVel: 1
+  dashCd: 2
+  dashKey: 304
 --- !u!114 &712938026291573816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,8 +654,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8123426940477240484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09592589, y: -0.22368246, z: 0.022127913, w: 0.9696777}
-  m_LocalPosition: {x: 2.1938572, y: 0.50068855, z: 1.4977818}
+  m_LocalRotation: {x: 0.09766628, y: -0.04659302, z: 0.0045774947, w: 0.99411744}
+  m_LocalPosition: {x: 0.47406387, y: 0.5052587, z: 0.9555073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -713,7 +738,7 @@ MonoBehaviour:
     SplineCurvature: 0.3
   RecenteringTarget: 2
   HorizontalAxis:
-    Value: 140.79126
+    Value: -5.36869
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -723,7 +748,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: -9.924346
+    Value: -9.395729
     Center: 17.5
     Range: {x: -10, y: 45}
     Wrap: 0

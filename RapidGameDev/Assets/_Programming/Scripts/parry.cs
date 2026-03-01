@@ -17,7 +17,7 @@ public class parry : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && canParry)
+        if (Input.GetMouseButtonDown(1) && canParry)
         {
             doAParry();
         }
