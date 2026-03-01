@@ -2,20 +2,20 @@ using UnityEngine;
 
 public class _levelManager : MonoBehaviour
 {
-    #region Lazy Singleton
-    private static _levelManager instance;
-    public static _levelManager Instance => instance;
+    //#region Lazy Singleton
+    //private static _levelManager instance;
+    //public static _levelManager Instance => instance;
 
-    private void Awake()
-    {
-        instance = this;
-    }
-    #endregion
+    //private void Awake()
+    //{
+    //    instance = this;
+    //}
+    //#endregion
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
+        if (other.CompareTag("Player")) {
+            Debug.Log("Activated");
             _gameManager.Instance.levelComplete();
         }
     }

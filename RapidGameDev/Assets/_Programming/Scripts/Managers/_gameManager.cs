@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class _gameManager : MonoBehaviour
 {
-    [SerializeField] GameObject playerGameObject;
-    public GameObject PlayerGameObject => playerGameObject;
-    private playerMove playerMove;
-    public playerMove PlayerMove => playerMove;
+    //[SerializeField] GameObject playerGameObject;
+    //public GameObject PlayerGameObject => playerGameObject;
+    //private playerMove playerMove;
+    //public playerMove PlayerMove => playerMove;
 
     #region Singleton
     public static _gameManager instance;
@@ -54,6 +54,7 @@ public class _gameManager : MonoBehaviour
     private string currentLevelName = "";
     private int currentLevelIndex = 0;
     [SerializeField] GameObject playerGO;
+    [SerializeField] GameObject mainCamera;
 
     /// <summary>
     /// Defines the start behaviour of the game
@@ -80,24 +81,39 @@ public class _gameManager : MonoBehaviour
     /// </summary>
     /// <param name="LevelName">The level name, as a string, to be loaded</param>
     /// <returns>IEnumerator interface as per coroutine convention</returns>
-    IEnumerator loadLevel(string LevelName)
+    IEnumerator loadLevel(string levelName)
     {
         isLoadingScene = true;
-        playerGameObject.SetActive(false);
-        if (!string.IsNullOrEmpty(currentLevelName))
+        mainCamera.SetActive(false);
+        playerGO.SetActive(false);
+       if (!string.IsNullOrEmpty(currentLevelName))
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevelName);
             while (!asyncUnload.isDone)
                 yield return null;
-
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LevelName));
-            currentLevelName = LevelName;
         }
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(LevelName, LoadSceneMode.Additive);
+       AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
             yield return null;
-        playerGameObject.SetActive(true);
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(levelName));
+        currentLevelName = levelName;
+
+        if (currentLevelName == "Level_01")
+        {
+            playerGO.transform.position = GameObject.FindGameObjectWithTag("Start").transform.position;
+        }
+        if (currentLevelName == "Level_02")
+        {
+            playerGO.transform.position = GameObject.FindGameObjectWithTag("Start").transform.position;
+        }
+        if (currentLevelName == "Level_03")
+        {
+            playerGO.transform.position = GameObject.FindGameObjectWithTag("Start").transform.position;
+        }
+        mainCamera.SetActive(true);
+        playerGO.SetActive(true);
         isLoadingScene = false;
     }
     #endregion
