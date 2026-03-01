@@ -14,7 +14,7 @@ public class _levelManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == _gameManager.Instance.PlayerGameObject)
+        if (other.gameObject.CompareTag("Player"))
         {
             _gameManager.Instance.levelComplete();
         }

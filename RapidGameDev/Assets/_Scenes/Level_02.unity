@@ -3976,6 +3976,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.165985
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.50068665
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.880669
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.33389387
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.03303052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.93745595
+      objectReference: {fileID: 0}
+    - target: {fileID: 2623914363943328605, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.092738025
+      objectReference: {fileID: 0}
     - target: {fileID: 6441782629823388441, guid: a69dafd8a1ddad34daf99672a5d0918e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4575,7 +4603,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: maxEnemies
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: spawnerSize
@@ -16101,7 +16129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: maxEnemies
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: spawnerSize
@@ -21585,7 +21613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: maxEnemies
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: spawnerSize
@@ -27599,7 +27627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f6b0e5e48758940b844d184a836a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quotas: 080000000f000000
+  quotas: 0800000014000000
   zoneData:
   - spawners: {fileID: 1451764347}
     gates: {fileID: 1096034049}
@@ -38107,7 +38135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: maxEnemies
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2872148814048476796, guid: b788b3aa0b377ca43b05f4430da005f9, type: 3}
       propertyPath: spawnerSize

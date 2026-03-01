@@ -53,13 +53,13 @@ public class _gameManager : MonoBehaviour
     private bool isLoadingScene = false;
     private string currentLevelName = "";
     private int currentLevelIndex = 0;
+    [SerializeField] GameObject playerGO;
 
     /// <summary>
     /// Defines the start behaviour of the game
     /// </summary>
     private void Start()
     {
-        playerMove = playerGameObject.GetComponent<playerMove>();
         StartCoroutine(loadLevel(levelNames[0]));
     }
 
