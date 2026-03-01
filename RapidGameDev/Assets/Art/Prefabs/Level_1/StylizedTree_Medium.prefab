@@ -48,9 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4385482618671122534, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
       propertyPath: m_Name
       value: StylizedTree_Medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2956412380167674389, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
       propertyPath: m_Materials.Array.size
@@ -64,6 +72,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: b59a3731726b1b744a7db67e25dfa4ae, type: 2}
+    - target: {fileID: 7195052137986502637, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8561334913784435998, guid: 86b4a6027a88bcb4e9d8a55b12bee93c, type: 3}
       propertyPath: m_Materials.Array.size
       value: 2
