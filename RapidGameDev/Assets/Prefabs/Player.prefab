@@ -629,8 +629,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8123426940477240484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.03303064, y: 0.93745595, z: -0.0927384, w: 0.33389357}
-  m_LocalPosition: {x: -3.1659791, y: 0.5006882, z: 9.880666}
+  m_LocalRotation: {x: 0.09592589, y: -0.22368246, z: 0.022127913, w: 0.9696777}
+  m_LocalPosition: {x: 2.1938572, y: 0.50068855, z: 1.4977818}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -958,6 +958,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6083145927440540070}
     m_Modifications:
+    - target: {fileID: 546136788499271523, guid: a4467e4175ba47a4c99910c90e35d1c4, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6493532946230431104, guid: a4467e4175ba47a4c99910c90e35d1c4, type: 3}
       propertyPath: m_Name
       value: Hammer_M
